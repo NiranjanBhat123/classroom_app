@@ -32,7 +32,7 @@ function UserList() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/principal/fetch_users');
+        const response = await axios.get('https://classroom-app-5.onrender.com/api/principal/fetch_users');
         setUsers(response.data);
       } catch (error) {
         toast.error('Failed to fetch users');
@@ -57,7 +57,7 @@ function UserList() {
   const handleSave = async () => {
     if (selectedUser) {
       try {
-        const response = await axios.put('http://localhost:5000/api/principal/edit_user', {
+        const response = await axios.put('https://classroom-app-5.onrender.com/api/principal/edit_user', {
           id: selectedUser._id,
           email: editedEmail,
           role: userType
@@ -80,7 +80,7 @@ function UserList() {
   const handleDelete = async () => {
     if (selectedUser) {
       try {
-        const response = await axios.delete('http://localhost:5000/api/principal/delete_user', {
+        const response = await axios.delete('https://classroom-app-5.onrender.com/api/principal/delete_user', {
           data: { id: selectedUser._id, role: userType }
         });
 

@@ -12,7 +12,7 @@ function TeacherLogin() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/teacher_auth/login', {
+      const response = await axios.post('https://classroom-app-5.onrender.com/api/teacher_auth/login', {
         email,
         password,
       });

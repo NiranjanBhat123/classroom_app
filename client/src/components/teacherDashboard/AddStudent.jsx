@@ -16,7 +16,7 @@ function AddTeacher() {
   
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/teacher/add_student',
+        'https://classroom-app-5.onrender.com/api/teacher/add_student',
         {
           email,
           password,

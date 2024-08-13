@@ -26,7 +26,7 @@ function CreateClassroom() {
     try {
       console.log('Submitting data:', { name, schedule });
       
-      const response = await axios.post('http://localhost:5000/api/principal/create_classroom', {
+      const response = await axios.post('https://classroom-app-5.onrender.com/api/principal/create_classroom', {
         name,
         schedule
       });

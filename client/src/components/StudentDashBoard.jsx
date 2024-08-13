@@ -46,7 +46,7 @@ function StudentDashboard() {
       try {
         const token = localStorage.getItem('token');
         if (token) {
-          const response = await axios.get('http://localhost:5000/api/student/me', {
+          const response = await axios.get('https://classroom-app-5.onrender.com/api/student/me', {
             headers: {
               Authorization: `Bearer ${token}`,
             },
@@ -68,7 +68,7 @@ function StudentDashboard() {
 
   const fetchClassrooms = async (token, studentId) => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/student/${studentId}`);
+      const response = await axios.get(`https://classroom-app-5.onrender.com/api/student/${studentId}`);
       setClassrooms(response.data.classrooms);
     } catch (error) {
       console.error('Error fetching classrooms:', error);

@@ -14,7 +14,7 @@ const handleSubmit = async (e) => {
   e.preventDefault();
 
   try {
-    const response = await axios.post('http://localhost:5000/api/principal/add_teacher', {
+    const response = await axios.post('https://classroom-app-5.onrender.com/api/principal/add_teacher', {
       email,
       password,
     });

@@ -18,7 +18,7 @@ function UpdateStudentInfo() {
       try {
         const token = localStorage.getItem('token');
         if (token) {
-          const response = await axios.get('http://localhost:5000/api/student/me', {
+          const response = await axios.get('https://classroom-app-5.onrender.com/api/student/me', {
             headers: {
               Authorization: `Bearer ${token}`,
             },
@@ -43,7 +43,7 @@ function UpdateStudentInfo() {
         role: 'student'
       };
 
-      const response = await axios.put('http://localhost:5000/api/principal/edit_user', requestData);
+      const response = await axios.put('https://classroom-app-5.onrender.com/api/principal/edit_user', requestData);
 
       if (response.status === 200) {
         toast.success('Student details updated successfully!');

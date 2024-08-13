@@ -30,7 +30,7 @@ function ClassroomInfo() {
   const fetchClassroomInfo = async () => {
     const token = localStorage.getItem('token');
     try {
-      const response = await axios.get('http://localhost:5000/api/teacher/classroom_info', {
+      const response = await axios.get('https://classroom-app-5.onrender.com/api/teacher/classroom_info', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -62,7 +62,7 @@ function ClassroomInfo() {
     if (selectedStudent) {
       
       try {
-        const response = await axios.put('http://localhost:5000/api/principal/edit_user', {
+        const response = await axios.put('https://classroom-app-5.onrender.com/api/principal/edit_user', {
           id: selectedStudent._id,
           email: editedEmail,
           role:"student"
@@ -85,7 +85,7 @@ function ClassroomInfo() {
     if (selectedStudent) {
       const token = localStorage.getItem('token');
       try {
-        const response = await axios.delete('http://localhost:5000/api/principal/delete_user', {
+        const response = await axios.delete('https://classroom-app-5.onrender.com/api/principal/delete_user', {
           data: { id: selectedStudent._id ,
             role:"student"
           },

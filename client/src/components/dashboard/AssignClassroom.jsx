@@ -21,8 +21,8 @@ function AssignClassroom() {
     const fetchData = async () => {
       try {
         const [teachersResponse, classroomsResponse] = await Promise.all([
-          axios.get('http://localhost:5000/api/principal/fetch_teachers'),
-          axios.get('http://localhost:5000/api/principal/fetch_classrooms')
+          axios.get('https://classroom-app-5.onrender.com/api/principal/fetch_teachers'),
+          axios.get('https://classroom-app-5.onrender.com/api/principal/fetch_classrooms')
         ]);
         console.log(teachersResponse.data);
         setTeachers(teachersResponse.data);
@@ -44,7 +44,7 @@ function AssignClassroom() {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/api/principal/assign_classroom', {
+      const response = await axios.post('https://classroom-app-5.onrender.com/api/principal/assign_classroom', {
         teacherId: selectedTeacher,
         classroomId: selectedClassroom
       });
